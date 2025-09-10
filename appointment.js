@@ -331,6 +331,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     value.textContent = selectedData.location;
                 } else if (label === 'Date & Time:' && selectedData.timeSlot) {
                     const currentDate = new Date();
+                    // Add one day to get tomorrow's date
+                    currentDate.setDate(currentDate.getDate() + 1);
                     const formattedDate = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
                     value.textContent = `${formattedDate} • ${selectedData.timeSlot}`;
                 } else if (label === 'Duration:') {
@@ -473,6 +475,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (durationItem && summaryDuration) {
             durationItem.textContent = summaryDuration.textContent;
         }
+        
+        // Update the confirmation screen date with tomorrow's date
+        const currentDate = new Date();
+        // Add one day to get tomorrow's date
+        currentDate.setDate(currentDate.getDate() + 1);
+        
+        // Update the date elements in the confirmation screen
+        const dayElement = document.querySelector('.day-large');
+        const monthElement = document.querySelector('.month-large');
+        const yearElement = document.querySelector('.year');
+        const timeElement = document.querySelector('.time-large');
+        
+        if (dayElement) dayElement.textContent = currentDate.getDate();
+        if (monthElement) monthElement.textContent = currentDate.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+        if (yearElement) yearElement.textContent = currentDate.getFullYear();
+        if (timeElement && selectedData.timeSlot) timeElement.textContent = selectedData.timeSlot;
         
         // Hide current screen
         document.getElementById('booking-payment-screen').classList.remove('active');
