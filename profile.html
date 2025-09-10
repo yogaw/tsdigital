@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Two Seasons Beauty Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation Menu -->
+        <nav class="main-nav">
+            <div class="logo">TS</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Who We Are</a>
+                <a href="#">Brand Collaborator</a>
+                <a href="#">Our Salon</a>
+                <a href="#">Work with us</a>
+                <a href="#">Branches</a>
+            </div>
+        </nav>
+
+        <!-- Profile Screen -->
+        <div id="profile-screen" class="screen active">
+            <header class="screen-header">
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+                <h2>My Profile</h2>
+            </header>
+            
+            <div class="profile-content">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 id="profile-name">Sheren</h3>
+                    <p class="loyalty-tier">TS Miles Black Card</p>
+                </div>
+                
+                <div class="profile-form">
+                    <!-- Identity Section -->
+                    <div class="profile-section">
+                        <h3>Identity</h3>
+                        <div class="form-group">
+                            <label for="profile-name-input">Full Name</label>
+                            <input type="text" id="profile-name-input" value="Sheren">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-phone">Phone Number</label>
+                            <input type="tel" id="profile-phone" value="+62 812 3456 7890" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-dob">Date of Birth</label>
+                            <input type="date" id="profile-dob" value="1990-01-15">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female" checked>
+                                    <span>Female</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male">
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- My Beauty Profile Section -->
+                    <div class="profile-section">
+                        <h3>My Beauty Profile</h3>
+                        <div class="form-group">
+                            <label>Beauty Focus</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="beauty-focus" value="hair" checked>
+                                    <span>Hair</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="beauty-focus" value="spa" checked>
+                                    <span>Spa</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="beauty-focus" value="nails">
+                                    <span>Nails</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="beauty-focus" value="lashes">
+                                    <span>Lashes</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="beauty-focus" value="wellness">
+                                    <span>Wellness</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Condition Tags (Optional)</label>
+                            <div class="tag-container">
+                                <div class="tag">Dry Hair</div>
+                                <div class="tag">Sensitive Skin</div>
+                                <div class="tag">Brittle Nails</div>
+                                <div class="tag-add"><i class="fas fa-plus"></i> Add</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- My Beauty Space Section -->
+                    <div class="profile-section">
+                        <h3>My Beauty Space</h3>
+                        <div class="form-group">
+                            <label for="favorite-location">Favorite Beauty Space</label>
+                            <select id="favorite-location">
+                                <option value="puri">Puri Indah Mall</option>
+                                <option value="pakubuwono">Pakubuwono</option>
+                                <option value="senayan">Senayan City Mall</option>
+                                <option value="bsd">BSD</option>
+                                <option value="pik">PIK</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Preferences Section -->
+                    <div class="profile-section">
+                        <h3>Preferences</h3>
+                        <div class="form-group">
+                            <label>Communication Preferences</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="push" checked>
+                                    <span>Push Notifications</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="email" checked>
+                                    <span>Email</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="communication" value="whatsapp">
+                                    <span>WhatsApp</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Stylist</label>
+                            <div class="toggle-container disabled">
+                                <span>- coming soon -</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" disabled>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn primary-btn">Save Changes</button>
+                </div>
+                
+                <div class="profile-section">
+                    <h3>Account Settings</h3>
+                    <ul class="settings-list">
+                        <li>
+                            <span>Set Password</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>
+                            <span>Notifications</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                        <li>
+                            <span>Language</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="btn outline-btn logout-btn">Log Out</button>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="appointment.html" class="nav-item">
+                <i class="fas fa-calendar"></i>
+                <span>Appointments</span>
+            </a>
+            <button class="nav-item" data-screen="shop-screen">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Shop</span>
+            </button>
+            <button class="nav-item" data-screen="beauty-condition-screen">
+                <i class="fas fa-heart"></i>
+                <span>Beauty Journey</span>
+            </button>
+            <a href="profile.html" class="nav-item active">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

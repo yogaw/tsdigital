@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Seasons Beauty Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation Menu -->
+        <nav class="main-nav">
+            <div class="logo">TS</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Who We Are</a>
+                <a href="#">Brand Collaborator</a>
+                <a href="#">Our Salon</a>
+                <a href="#">Work with us</a>
+                <a href="#">Branches</a>
+            </div>
+        </nav>
+
+        <!-- Authentication Screens -->
+        <div id="auth-screen" class="screen active">
+            <div class="auth-container">
+                <h2>Welcome</h2>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Sign In</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+                
+                <div id="login-form" class="auth-form active">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+62 xxx xxxx xxxx">
+                    </div>
+                    <button class="btn primary-btn" id="request-otp-btn">Request OTP</button>
+                    
+                    <div class="otp-section hidden">
+                        <div class="form-group">
+                            <label for="otp">Enter OTP</label>
+                            <div class="otp-inputs">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                            </div>
+                        </div>
+                        <button class="btn primary-btn" id="verify-otp-btn">Verify & Sign In</button>
+                    </div>
+                    
+                    <div class="password-section hidden">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                        </div>
+                        <button class="btn primary-btn" id="login-password-btn">Sign In</button>
+                        <p class="text-link" id="forgot-password">Forgot Password?</p>
+                    </div>
+                    
+                    <p class="toggle-auth-method">Sign in with <span id="toggle-auth">Password</span> instead</p>
+                </div>
+                
+                <div id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-phone">Phone Number</label>
+                        <input type="tel" id="signup-phone" placeholder="+62 xxx xxxx xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name">
+                    </div>
+                    <button class="btn primary-btn" id="signup-request-otp-btn">Request OTP</button>
+                    
+                    <!-- Make sure the signup OTP section is properly hidden initially -->
+                    <div class="signup-otp-section hidden">
+                        <div class="form-group">
+                            <label for="signup-otp">Enter OTP</label>
+                            <div class="otp-inputs">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                                <input type="text" maxlength="1" class="otp-input">
+                            </div>
+                        </div>
+                        <button class="btn primary-btn" id="signup-verify-otp-btn">Verify & Create Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Screen -->
+        <div id="dashboard-screen" class="screen">
+            <header class="app-header">
+                <div class="user-greeting">
+                    <h2>Hello, <span id="user-name">Sheren</span></h2>
+                    <p class="location">Two Seasons Puri Indah</p>
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fas fa-bell"></i></button>
+                    <button class="icon-btn" id="header-profile-btn"><i class="fas fa-user"></i></button>
+                </div>
+            </header>
+            
+            <div class="dashboard-content">
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="action-buttons">
+                        <button class="action-btn">
+                            <i class="far fa-calendar-plus"></i>
+                            <span>Rebook Service</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="far fa-box"></i>
+                            <span>Packages</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="far fa-coins"></i>
+                            <span>Top Up Miles</span>
+                        </button>
+                        <button class="action-btn">
+                            <i class="far fa-shopping-bag"></i>
+                            <span>Shop Products</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Appointment Card -->
+                <div class="card appointment-card">
+                    <div class="card-header">
+                        <h3>Upcoming Appointment</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="appointment-details">
+                            <div class="appointment-date">
+                                <span class="day">15</span>
+                                <span class="month">JUN</span>
+                            </div>
+                            <div class="appointment-info">
+                                <h4>Hair Color & Treatment</h4>
+                                <p>2:00 PM • Hair Affair • Puri Indah</p>
+                                <p>with Stylist Nina</p>
+                            </div>
+                        </div>
+                        <div class="appointment-actions">
+                            <button class="btn outline-btn">Reschedule</button>
+                            <button class="btn text-btn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wallet Summary Card -->
+                <div class="card wallet-card">
+                    <div class="card-header">
+                        <h3>My Benefits</h3>
+                        <button class="text-btn">View All</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="wallet-item">
+                            <div class="wallet-icon"><i class="fas fa-coins"></i></div>
+                            <div class="wallet-info">
+                                <h4>TS Miles</h4>
+                                <p>500,000 Miles</p>
+                            </div>
+                            <button class="btn primary-btn small-btn">Add Miles</button>
+                        </div>
+                        <div class="wallet-item">
+                            <div class="wallet-icon"><i class="fas fa-ticket-alt"></i></div>
+                            <div class="wallet-info">
+                                <h4>Vouchers</h4>
+                                <p>3 Active</p>
+                            </div>
+                            <button class="btn outline-btn small-btn">See Vouchers</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Beauty Journey Card -->
+                <div class="card beauty-journey-card">
+                    <div class="card-header">
+                        <h3>My Beauty Journey</h3>
+                        <button class="text-btn">Details</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="progress-indicator">
+                            <p>2/3 visits completed</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 66%;"></div>
+                            </div>
+                        </div>
+                        <div class="last-visit">
+                            <h5>Last Visit: May 28, 2025</h5>
+                            <p>Hair Color & Treatment</p>
+                        </div>
+                        <div class="beauty-condition">
+                            <h4>Current Condition</h4>
+                            <div class="condition-tags">
+                                <span class="tag">Color-treated</span>
+                                <span class="tag">Dry Ends</span>
+                                <span class="tag">Medium Porosity</span>
+                            </div>
+                        </div>
+                        <div class="recommendation">
+                            <h3>Recommended Next Treatment</h3>
+                            <p>Keratin Treatment in 2 weeks</p>
+                            <button class="btn primary-btn">Book This Treatment</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promotional Banner -->
+                <div class="card promo-banner-card">
+                    <div class="card-header">
+                        <h3>Promotion</h3>
+                        <button class="text-btn">View All</button>
+                    </div>
+                    <div class="card-content">
+                        <h4>1 more visit to unlock 20% off!</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 66%;"></div>
+                        </div>
+                        <p>2/3 visits completed</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-screen="dashboard-screen">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <a href="appointment.html" class="nav-item">
+                <i class="fas fa-calendar"></i>
+                <span>Appointments</span>
+            </a>
+            <button class="nav-item" data-screen="shop-screen">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Shop</span>
+            </button>
+            <button class="nav-item" data-screen="beauty-condition-screen">
+                <i class="fas fa-heart"></i>
+                <span>Beauty Journey</span>
+            </button>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
